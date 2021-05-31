@@ -6,7 +6,6 @@ function Expenses(props) {
 
   return (
     <div className="expenses">
-      <h2>Let's get started!</h2>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
