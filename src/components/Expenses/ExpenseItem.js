@@ -7,6 +7,7 @@ const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
   console.log('ExpenseItem Evaluated by React!');
   
+  // ToDo: remove this handler along with statefullness in the near future.
   const clickHandler = () => {
     setTitle("Updated Title!");
     console.log(title);
