@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
@@ -7,9 +7,16 @@ import ExpensesFilter from "./ExpensesFilter";
 const Expenses = (props) => {
   const expenses = props.expenses;
 
+  const [expenseDate, setExpenseDate] = useState('');
+
+  const saveSelectedExpenseDate = (selectedExpenseDate) => {
+    console.log(`Expenses.js: ${selectedExpenseDate} was selected from date filter`);
+    setExpenseDate(selectedExpenseDate);
+  }
+
   return (
     <div>
-      <ExpensesFilter />
+      <ExpensesFilter onSelectExpenseDate={saveSelectedExpenseDate} />
       <Card className="expenses">
         <ExpenseItem
           title={expenses[0].title}
